@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="O365PWSync64" Language="1033" Version="2.0.0.0" Manufacturer="Haskell Technology Solutions LLC" UpgradeCode="3ba3d5fd-0071-49bc-b678-1b124da6c7f1">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Platform="x64"/>
+    
+    <MajorUpgrade AllowDowngrades="no" DowngradeErrorMessage="A newer version of [ProductName] is already installed." AllowSameVersionUpgrades="yes"/>
+		<MediaTemplate EmbedCab="yes"/>
+
+		<Feature Id="ProductFeature" Title="O365PWSync64" Level="1">
+      <ComponentGroupRef Id="HeatGenerated" />
+      <ComponentGroupRef Id="SyncService" />
+      <ComponentGroupRef Id="SyncServiceConfig"/>
+      <ComponentGroupRef Id="SystemComponents" />
+		</Feature>
+
+    <CustomAction Id="LaunchApp" Directory="INSTALLFOLDER" ExeCommand="[SystemFolder]cmd.exe /C O365PWSync_SyncServiceConfig.exe" />
+    
+    <InstallExecuteSequence>
+      <Custom Action="LaunchApp" After="InstallFinalize" >
+        NOT Installed
+      </Custom>
+    </InstallExecuteSequence>
+	</Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="HaskellTech" Name="Haskell Tech">
+          <Directory Id="INSTALLFOLDER" Name="O365PWSync" />
+        </Directory>
+      </Directory>
+      <Directory Id="WindowsFolder">
+        <Directory Id="System32" Name="System32"/>
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="SyncService" Directory="INSTALLFOLDER">
+      <Component Id="O365PWSync_SyncServiceComponent" Win64="yes">
+        <File Id='O365PWSync_SyncServiceEXE' Name='O365PWSync_SyncService.exe' Source="$(var.O365PWSync_SyncService.TargetDir)\O365PWSync_SyncService.exe"  KeyPath='yes' ProcessorArchitecture="x64"/>
+        <ServiceInstall
+        Id="ServiceInstaller"
+        Type="ownProcess"
+        Name="O365PWSync"
+        DisplayName="O365PWSync"
+        Description="Office 365 Password Synchronization Service"
+        Start="auto"
+        Account="[SERVICEACCOUNT]"
+        Password="[SERVICEPASSWORD]"
+        ErrorControl="normal"
+        Arguments=" /start O365PWSync"/>
+        <ServiceControl Id="StartService" Stop="both" Remove="uninstall" Name="O365PWSync" Wait="yes" />
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="SyncServiceConfig" Directory="INSTALLFOLDER">
+      <Component Id="O365PWSync_SyncServiceConfigComponent" Win64="yes">
+        <File Id='O365PWSync_SyncServiceConfigEXE' Name='O365PWSync_SyncServiceConfig.exe' Source="$(var.O365PWSync_SyncService.TargetDir)\O365PWSync_SyncServiceConfig.exe" KeyPath='yes' ProcessorArchitecture="x64"/>
+      </Component>
+    </ComponentGroup>
+    <ComponentGroup Id="SystemComponents" Directory="System32">
+      <Component Id="O365PWSync_LSAProviderComponents" Win64="yes">
+        <File Id='O365PWSync_LSAProvider64DLL' Name='O365PWSync_LSAProvider64.dll' Source="$(var.O365PWSync_LSAProvider.TargetDir)\O365PWSync_LSAProvider64.dll"  KeyPath='yes'/>
+      </Component>
+      <Component Id='RegistryEntries' Win64="yes">
+        <RegistryKey Root="HKLM"
+             Key="SYSTEM\CurrentControlSet\Control\Lsa">
+          <RegistryValue Type="multiString" Name="Notification Packages"
+                         Value="O365PWSync_LSAProvider64" Action="append" />
+        </RegistryKey>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

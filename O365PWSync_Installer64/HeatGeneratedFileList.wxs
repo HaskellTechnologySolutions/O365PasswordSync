@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLFOLDER">
+            <Component Id="cmp0BFABD100B4065787B40AA6B05938DF7" Guid="*" Win64="yes">
+                <File Id="fil1D38723F4A034EDE78B6A3B94EFB99F2" KeyPath="yes" Source="$(var.HarvestPath)\EntityFramework.dll" />
+            </Component>
+            <Component Id="cmpB8E7B130B6B78399B39307530A3D65B2" Guid="*" Win64="yes">
+                <File Id="fil55247FAD2E00E96001D9F9C3E501E9FA" KeyPath="yes" Source="$(var.HarvestPath)\EntityFramework.SqlServer.dll" />
+            </Component>
+            <Component Id="cmp0FB966002F85AF6212B7AD3DB5E1B405" Guid="*" Win64="yes">
+                <File Id="fil3CA52A37FA9A6E996CBB782A0218A667" KeyPath="yes" Source="$(var.HarvestPath)\EntityFramework.SqlServer.xml" />
+            </Component>
+            <Component Id="cmp6CF5CB56E3583D0EBD44D2BB10A62A27" Guid="*" Win64="yes">
+                <File Id="filD3369B082D009ADB833B8DD9F589E45E" KeyPath="yes" Source="$(var.HarvestPath)\EntityFramework.xml" />
+            </Component>
+            <Component Id="cmpE811A7C97D5FDAD38EED6DDD8FFF9B4E" Guid="*" Win64="yes">
+                <File Id="fil5301248BA594CA514E55750B1D89B69E" KeyPath="yes" Source="$(var.HarvestPath)\Microsoft.Graph.Core.dll" />
+            </Component>
+            <Component Id="cmpA71CDE3B249E1D586CE4017DACDD68FF" Guid="*" Win64="yes">
+                <File Id="filE99CF573AFA616A86168166FB30122E9" KeyPath="yes" Source="$(var.HarvestPath)\Microsoft.Graph.Core.xml" />
+            </Component>
+            <Component Id="cmpCE2BAC0E72511F4C069A4049AC70CDD6" Guid="*" Win64="yes">
+                <File Id="fil0B75B17A73452F5CE480341634535A48" KeyPath="yes" Source="$(var.HarvestPath)\Microsoft.Graph.dll" />
+            </Component>
+            <Component Id="cmp40442B83139A6A913CCB3660D0AD374F" Guid="*" Win64="yes">
+                <File Id="filDACC1904F95EC13515E677D8682C4A4D" KeyPath="yes" Source="$(var.HarvestPath)\Microsoft.Graph.xml" />
+            </Component>
+            <Component Id="cmpBC4FC00A26E7D32479D42D3411317FC5" Guid="*" Win64="yes">
+                <File Id="fil90A8AAD9FC612906D405476D61CEA3F4" KeyPath="yes" Source="$(var.HarvestPath)\Newtonsoft.Json.dll" />
+            </Component>
+            <Component Id="cmp125C379E185231EFADA4CB4301BD0A9E" Guid="*" Win64="yes">
+                <File Id="fil3A2F44A7730E98D18E0948B3261DFABD" KeyPath="yes" Source="$(var.HarvestPath)\Newtonsoft.Json.xml" />
+            </Component>
+            <Component Id="cmp6D6A7DD6EE0ADD4A85D31525971A348A" Guid="*" Win64="yes">
+                <File Id="fil2D551BFF8B8D430543C8229F51786130" KeyPath="yes" Source="$(var.HarvestPath)\O365PWSync_ConfigHandler.dll" />
+            </Component>
+            <Component Id="cmpEAA4FB7F84006D00E5CEDF86599B87E7" Guid="*" Win64="yes">
+                <File Id="filDC2CEFF053DFDADDC4E359989F7963A0" KeyPath="yes" Source="$(var.HarvestPath)\O365PWSync_O365Client.dll" />
+            </Component>
+            <Component Id="cmpA806C700B89C55EA52897D5760F2C99D" Guid="*" Win64="yes">
+                <File Id="filD5631F7BA1E054523A3907B1022571F4" KeyPath="yes" Source="$(var.HarvestPath)\O365PWSync_SyncService.exe.config" />
+            </Component>
+            <Component Id="cmp3104A0F10F18216945B242501500BA1C" Guid="*" Win64="yes">
+                <File Id="fil532CD59132763235BF152FFCADA6CD49" KeyPath="yes" Source="$(var.HarvestPath)\O365PWSync_SyncServiceConfig.exe.config" />
+            </Component>
+            <Component Id="cmp6B7CE49F5F3A518047B74FB6AC2251C5" Guid="*" Win64="yes">
+                <File Id="fil86030949C08D40073D1F77D572C14B0D" KeyPath="yes" Source="$(var.HarvestPath)\System.Data.SQLite.dll" />
+            </Component>
+            <Component Id="cmpE25D4339F043AE9AF876A4620A6432C9" Guid="*" Win64="yes">
+                <File Id="fil231CA1DE8C286CE1F5188773A945762D" KeyPath="yes" Source="$(var.HarvestPath)\System.Data.SQLite.dll.config" />
+            </Component>
+            <Component Id="cmpF0779F15EC19A57BE1B2F861D7DE696E" Guid="*" Win64="yes">
+                <File Id="filFCD462E7D1690B3E0A1EC55BB1B7FE6B" KeyPath="yes" Source="$(var.HarvestPath)\System.Data.SQLite.EF6.dll" />
+            </Component>
+            <Component Id="cmp7CD8A031D36A447486DB78F3F83272E7" Guid="*" Win64="yes">
+                <File Id="fil78A6DA4FA512268ADE24A0CEB59C1442" KeyPath="yes" Source="$(var.HarvestPath)\System.Data.SQLite.Linq.dll" />
+            </Component>
+            <Component Id="cmpB0D00055965EDE11CC624747CE56C686" Guid="*" Win64="yes">
+                <File Id="fil1AD5F5CE645B996B33CF1EF5C058BA4F" KeyPath="yes" Source="$(var.HarvestPath)\System.Data.SQLite.xml" />
+            </Component>
+            <Directory Id="dir43FCCFA109FBF584D9155DCE31E452EB" Name="x64">
+                <Component Id="cmp19F6DF8A2ABC78D782D76F1EEC9A5800" Guid="*" Win64="yes">
+                    <File Id="filC7EA62E1AC64247AFBE682E8631402B8" KeyPath="yes" Source="$(var.HarvestPath)\x64\SQLite.Interop.dll" />
+                </Component>
+            </Directory>
+            <Directory Id="dir97F42FF68945B97AAE670945C4FDAE93" Name="x86">
+                <Component Id="cmp77484AF39EF2F8BD64E876C33A1C3E49" Guid="*" Win64="yes">
+                    <File Id="filD2ACACD0EBAF09B1953E9C3793C13C69" KeyPath="yes" Source="$(var.HarvestPath)\x86\SQLite.Interop.dll" />
+                </Component>
+            </Directory>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="HeatGenerated">
+            <ComponentRef Id="cmp0BFABD100B4065787B40AA6B05938DF7" />
+            <ComponentRef Id="cmpB8E7B130B6B78399B39307530A3D65B2" />
+            <ComponentRef Id="cmp0FB966002F85AF6212B7AD3DB5E1B405" />
+            <ComponentRef Id="cmp6CF5CB56E3583D0EBD44D2BB10A62A27" />
+            <ComponentRef Id="cmpE811A7C97D5FDAD38EED6DDD8FFF9B4E" />
+            <ComponentRef Id="cmpA71CDE3B249E1D586CE4017DACDD68FF" />
+            <ComponentRef Id="cmpCE2BAC0E72511F4C069A4049AC70CDD6" />
+            <ComponentRef Id="cmp40442B83139A6A913CCB3660D0AD374F" />
+            <ComponentRef Id="cmpBC4FC00A26E7D32479D42D3411317FC5" />
+            <ComponentRef Id="cmp125C379E185231EFADA4CB4301BD0A9E" />
+            <ComponentRef Id="cmp6D6A7DD6EE0ADD4A85D31525971A348A" />
+            <ComponentRef Id="cmpEAA4FB7F84006D00E5CEDF86599B87E7" />
+            <ComponentRef Id="cmpA806C700B89C55EA52897D5760F2C99D" />
+            <ComponentRef Id="cmp3104A0F10F18216945B242501500BA1C" />
+            <ComponentRef Id="cmp6B7CE49F5F3A518047B74FB6AC2251C5" />
+            <ComponentRef Id="cmpE25D4339F043AE9AF876A4620A6432C9" />
+            <ComponentRef Id="cmpF0779F15EC19A57BE1B2F861D7DE696E" />
+            <ComponentRef Id="cmp7CD8A031D36A447486DB78F3F83272E7" />
+            <ComponentRef Id="cmpB0D00055965EDE11CC624747CE56C686" />
+            <ComponentRef Id="cmp19F6DF8A2ABC78D782D76F1EEC9A5800" />
+            <ComponentRef Id="cmp77484AF39EF2F8BD64E876C33A1C3E49" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>
