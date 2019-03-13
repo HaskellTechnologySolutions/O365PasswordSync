@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="O365PWSync64" Language="1033" Version="2.0.0.0" Manufacturer="Haskell Technology Solutions LLC" UpgradeCode="3ba3d5fd-0071-49bc-b678-1b124da6c7f1">
+	<Product Id="*" Name="O365PWSync64" Language="1033" Version="3.0.0.0" Manufacturer="Haskell Technology Solutions LLC" UpgradeCode="3ba3d5fd-0071-49bc-b678-1b124da6c7f1">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Platform="x64"/>
     
     <MajorUpgrade AllowDowngrades="no" DowngradeErrorMessage="A newer version of [ProductName] is already installed." AllowSameVersionUpgrades="yes"/>
