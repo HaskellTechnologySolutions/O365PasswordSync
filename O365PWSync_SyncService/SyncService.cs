@@ -23,6 +23,11 @@ namespace O365PWSync_SyncService
 		{
 			List<DBUser> users = DatabaseHandler.GetSyncs();
 
+			if (!ADHandler.ReloadGroup())
+			{
+				Logger.Send("Target group could not be reloaded during sync check. was the group deleted?", Logger.LogLevel.ERROR, 17);
+			}
+
 			O365Client client = new O365Client();
 
 			try

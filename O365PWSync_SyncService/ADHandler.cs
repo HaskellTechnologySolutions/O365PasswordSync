@@ -59,6 +59,26 @@ namespace O365PWSync_SyncService
 			}
 		}
 
+		public static bool ReloadGroup()
+		{
+			try
+			{
+				_group = GroupPrincipal.FindByIdentity(context, GroupName);
+				if (_group == null)
+				{
+					Logger.Send("Bad Configuration, could not find the group: " + GroupName + " in the directory!", Logger.LogLevel.ERROR, 1000);
+					return false;
+				}
+			}
+			catch (MultipleMatchesException)
+			{
+				Logger.Send("Bad Configuration, multiple groups match the group: " + GroupName + " in the directory!", Logger.LogLevel.ERROR, 1000);
+				return false;
+			}
+
+			return true;
+		}
+
 		public static bool IsUserInGroup(string username, string caller)
 		{
 			try
