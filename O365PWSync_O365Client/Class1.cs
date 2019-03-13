@@ -30,7 +30,7 @@ namespace O365PWSync_O365Client
 			List<User> users = (await gcs.Users.Request().GetAsync()).ToList();
 			User targetUser;
 
-			targetUser = users.Find(x => x.UserPrincipalName.Split('@')[0] == username);
+			targetUser = users.Find(x => x.UserPrincipalName.Split('@')[0].ToLower() == username.ToLower());
 
 			if (targetUser == null)
 			{
